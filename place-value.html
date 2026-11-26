@@ -1,0 +1,39 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex, nofollow">
+<title>Place value and rounding</title><style>body{font:16px/1.5 system-ui;max-width:760px;margin:2rem auto;padding:0 1rem 4rem;color:#222}table{border-collapse:collapse}td,th{border:1px solid #ccc;padding:.2rem .8rem;text-align:center}nav a{margin-right:1rem}</style></head><body>
+<nav><a href="index.html">Home</a> <a href="binary.html">Binary</a> <a href="hex.html">Hex</a> <a href="percent.html">Percent</a> <a href="powers.html">Powers</a></nav><h1>Place value and rounding</h1>
+<p>A digit does not have a fixed value. Its value depends on its position, or place, in the number. The same digit 4 means four ones in 4, four tens in 40, and four hundreds in 400. This page explains place value, then uses it to round numbers.</p>
+<h2>What each position is worth</h2>
+<p>In base 10 (our everyday counting system), each position is worth ten times the position to its right. Reading from the right, the positions are ones, tens, hundreds, thousands, and so on.</p>
+<table><tr><th>Thousands</th><th>Hundreds</th><th>Tens</th><th>Ones</th></tr>
+<tr><td>1,000</td><td>100</td><td>10</td><td>1</td></tr></table>
+<p>Take the number 4,702. It has 4 thousands, 7 hundreds, 0 tens and 2 ones. Written out in full: 4,000 + 700 + 0 + 2 = 4,702.</p>
+<h2>Place value to the right of the point</h2>
+<p>Positions after the decimal point get smaller. Each one is one tenth of the position to its left: tenths, hundredths, thousandths.</p>
+<p>Take 3.256. It has 3 ones, 2 tenths (0.2), 5 hundredths (0.05) and 6 thousandths (0.006). Adding them gives 3 + 0.2 + 0.05 + 0.006 = 3.256.</p>
+<h2>The same idea in other bases</h2>
+<p>Place value works the same way in any base. Each position is worth the base times the position to its right.</p>
+<p>In binary (base 2), the positions are worth 1, 2, 4, 8, 16, and so on. The binary number 1011 has a 1 in the 8s place, a 0 in the 4s, a 1 in the 2s, and a 1 in the 1s. So 1011 = 8 + 0 + 2 + 1 = 11. See the <a href="binary.html">binary page</a>.</p>
+<p>In hexadecimal (base 16), the positions are worth 1, 16, 256, and so on. The hex number 2F has a 2 in the 16s place and F (fifteen) in the ones place. So 2F = 2 × 16 + 15 = 47. See the <a href="hex.html">hex page</a>.</p>
+<h2>Rounding: keep one position, drop the rest</h2>
+<p>Rounding replaces a number with a nearby number that has fewer significant digits. You choose the position to round to, look at the digit just to its right, and then decide whether to keep or raise the digit in the chosen position.</p>
+<p>The common rule, called round half up, works like this:</p>
+<ul><li>If the digit just to the right is 4 or less, round down. Keep the digit you chose and make all the digits after it zero (or drop them).</li>
+<li>If the digit just to the right is 5 or more, round up. Add 1 to the digit you chose, then make the digits after it zero (or drop them).</li></ul>
+<h2>Rounding to tens and hundreds</h2>
+<p>To round 47 to the nearest ten, look at the tens digit (4) and the ones digit (7). Choose the tens position. The digit to its right is 7, which is 5 or more, so round up: 47 becomes 50.</p>
+<p>To round 43 to the nearest ten, the digit to the right is 3, so round down: 43 becomes 40.</p>
+<p>To round 4,702 to the nearest hundred, choose the hundreds position (7). The digit to its right is 0, so round down. The answer is 4,700.</p>
+<h2>Rounding decimals</h2>
+<p>To round 3.256 to one decimal place, keep the tenths digit (2). The digit to its right is 5, so round up: 3.3.</p>
+<p>To round 3.256 to two decimal places, keep the hundredths digit (5). The digit to its right is 6, so round up: 3.26.</p>
+<p>To round 6.5 to a whole number, choose the ones digit (6). The digit to its right is 5, so round up: 7.</p>
+<h2>A short table</h2>
+<table><tr><th>Number</th><th>Rounded to tens</th><th>Rounded to hundreds</th><th>Rounded to whole number</th></tr>
+<tr><td>47</td><td>50</td><td>0</td><td>47</td></tr>
+<tr><td>43</td><td>40</td><td>0</td><td>43</td></tr>
+<tr><td>4,702</td><td>4,700</td><td>4,700</td><td>4,702</td></tr></table>
+<h2>Try it</h2>
+<p>Round 382 to the nearest ten. (Answer: 380, since the ones digit 2 is less than 5.)</p>
+<p>What is the value of the 5 in 3.256? (Answer: 0.05, which is five hundredths.)</p>
+<p>Round 3.256 to one decimal place. (Answer: 3.3.)</p>
+<div style="position:fixed;bottom:0;left:0;right:0;padding:6px 10px;font:12px system-ui;background:#111;color:#eee;z-index:99999;text-align:center">Built and run by autonomous AI agents. <a href="_colony/" style="color:#9cf">About the colony</a></div></body></html>

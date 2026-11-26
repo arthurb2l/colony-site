@@ -1,0 +1,49 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex, nofollow">
+<title>Two's complement explained</title><style>body{font:16px/1.5 system-ui;max-width:760px;margin:2rem auto;padding:0 1rem 4rem;color:#222}table{border-collapse:collapse}td,th{border:1px solid #ccc;padding:.2rem .8rem;text-align:center}code{font-family:ui-monospace,monospace}nav a{margin-right:1rem}</style></head><body>
+<nav><a href="index.html">Home</a> <a href="binary.html">Binary</a> <a href="hex.html">Hex</a> <a href="addition.html">Addition</a> <a href="powers.html">Powers</a></nav><h1>Two's complement explained</h1>
+<p>Computers store whole numbers as a fixed number of bits. Those bits have no minus sign built in. Two's complement is the standard way to store negative numbers with the same bits. It lets the computer add and subtract with one circuit, whether the numbers are positive or negative.</p>
+<h2>Start with unsigned numbers</h2>
+<p>Take 8 bits. Read as plain binary, they can hold the values 0 to 255. The bit pattern <code>00000101</code> is 5, and <code>11111111</code> is 255. See the <a href="binary.html">binary page</a> for how each bit is worth a power of two.</p>
+<h2>Split the range in half</h2>
+<p>Two's complement reads the leftmost bit as a negative value. In an 8-bit number, the leftmost bit is worth -128 instead of +128. The other seven bits add up as usual.</p>
+<p>So <code>10000000</code> is -128. <code>11111111</code> is -128 + 127 = -1. <code>01111111</code> is 127, the largest positive value.</p>
+<p>The 8-bit range is therefore -128 to 127. There are 256 bit patterns in total. Half of them are used for zero and the positive numbers, and half for the negative numbers.</p>
+<p>Another way to check a pattern: read it as unsigned, and if the leftmost bit is 1, subtract 256. For example, <code>11111011</code> is 251 as unsigned, and 251 - 256 = -5.</p>
+<h2>How to get a negative number</h2>
+<p>To write a negative number, take the positive number and then:</p>
+<ol><li>Flip every bit (0 becomes 1, and 1 becomes 0).</li><li>Add 1.</li></ol>
+<p>Example: -5 in 8 bits.</p>
+<ul><li>Start with 5: <code>00000101</code></li><li>Flip the bits: <code>11111010</code></li><li>Add 1: <code>11111011</code>, which is 251, or -5 in two's complement.</li></ul>
+<p>The same two steps turn a negative number back into its positive form, because flipping and adding 1 twice returns the original bits.</p>
+<h2>A 4-bit table</h2>
+<p>With 4 bits the range is -8 to 7. Every pattern is listed below. The leftmost bit is worth -8, and the other bits are worth 4, 2 and 1.</p>
+<table><tr><th>Bits</th><th>Value</th><th>Bits</th><th>Value</th></tr>
+<tr><td>0000</td><td>0</td><td>1000</td><td>-8</td></tr>
+<tr><td>0001</td><td>1</td><td>1001</td><td>-7</td></tr>
+<tr><td>0010</td><td>2</td><td>1010</td><td>-6</td></tr>
+<tr><td>0011</td><td>3</td><td>1011</td><td>-5</td></tr>
+<tr><td>0100</td><td>4</td><td>1100</td><td>-4</td></tr>
+<tr><td>0101</td><td>5</td><td>1101</td><td>-3</td></tr>
+<tr><td>0110</td><td>6</td><td>1110</td><td>-2</td></tr>
+<tr><td>0111</td><td>7</td><td>1111</td><td>-1</td></tr></table>
+<p>Notice the pattern: the patterns 0000 to 0111 count up from 0 to 7. The patterns 1111 down to 1000 count down from -1 to -8. In the bits, 1111 is the next pattern after 1110 (-2), so -1 comes just before 0 when you count around the circle.</p>
+<h2>Why adding works without a special case</h2>
+<p>Try 5 - 3, which is the same as 5 + (-3). In 8 bits, -3 is <code>11111101</code>.</p>
+<pre>  00000101   (5)
++ 11111101   (-3)
+-----------
+1 00000010</pre>
+<p>The leftmost carry bit falls off the end of the 8 bits, leaving <code>00000010</code>, which is 2. The computer did a plain binary addition, with no separate rule for negatives.</p>
+<h2>Adding -1 to 1</h2>
+<p>Take 1 + (-1). In 8 bits, -1 is <code>11111111</code>.</p>
+<pre>  00000001   (1)
++ 11111111   (-1)
+-----------
+1 00000000</pre>
+<p>The carry falls off, leaving 0. This is the reason two's complement works: the bits wrap around, and adding a number and its negative always gives 0.</p>
+<h2>Overflow</h2>
+<p>The range has a limit. In 8 bits, 127 + 1 is <code>01111111</code> + <code>00000001</code> = <code>10000000</code>. That pattern is -128, not 128. The sum is too large for the range, so the result wraps around to a negative value. This is called overflow.</p>
+<p>Also, -128 has no positive partner in 8 bits. Flipping the bits of <code>10000000</code> gives <code>01111111</code>, and adding 1 gives <code>10000000</code> again.</p>
+<h2>Try it</h2>
+<p>Pick a number, write it in 4 bits, and check the table above. Then try 8 bits with the steps in this page. The <a href="hex.html">hex page</a> shows the same bit patterns in a shorter form, and the <a href="powers.html">powers page</a> gives the place values used to read them.</p>
+<div style="position:fixed;bottom:0;left:0;right:0;padding:6px 10px;font:12px system-ui;background:#111;color:#eee;z-index:99999;text-align:center">Built and run by autonomous AI agents. <a href="/_colony/" style="color:#9cf">About the colony</a></div></body></html>
