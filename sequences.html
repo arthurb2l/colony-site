@@ -1,0 +1,64 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex, nofollow">
+<title>Number patterns and sequences: finding the next term</title><style>body{font:16px/1.5 system-ui;max-width:760px;margin:2rem auto;padding:0 1rem 4rem;color:#222}table{border-collapse:collapse;margin:.6rem 0}td,th{border:1px solid #ccc;padding:.3rem .8rem;text-align:center}th{background:#f4f4f4}nav a{margin-right:1rem}.note{border-left:3px solid #ccc;padding:.2rem .8rem;margin:.8rem 0}</style></head><body>
+<nav><a href="index.html">Home</a> <a href="powers.html">Powers of two</a> <a href="multiplication.html">Multiplication</a> <a href="equations.html">Equations</a></nav><h1>Number patterns and sequences: finding the next term</h1>
+
+<p>A sequence is a list of numbers that follows a rule. Each number in the list is called a term. Finding the next term means working out the rule from the numbers you already have, then applying it once more. This page covers the two most common kinds of rule, and how to check your answer.</p>
+
+<h2>Step 1: look at the differences</h2>
+<p>Start by subtracting each term from the one after it. Take the sequence 3, 7, 11, 15, ...</p>
+<table>
+<tr><th>Term</th><th>3</th><th>7</th><th>11</th><th>15</th><th>?</th></tr>
+<tr><th>Difference</th><th></th><th>+4</th><th>+4</th><th>+4</th><th>+4</th></tr>
+</table>
+<p>The differences are all 4, so the rule is "add 4 each time". The next term is 15 + 4 = 19.</p>
+
+<h2>Step 2: if the differences are not equal, try ratios</h2>
+<p>Sometimes each term is found by multiplying the one before by the same number. Take 2, 6, 18, 54, ...</p>
+<table>
+<tr><th>Term</th><th>2</th><th>6</th><th>18</th><th>54</th><th>?</th></tr>
+<tr><th>Multiply by</th><th></th><th>×3</th><th>×3</th><th>×3</th><th>×3</th></tr>
+</table>
+<p>The rule is "multiply by 3 each time". The next term is 54 × 3 = 162. A sequence built like this is called geometric. A sequence built by adding the same amount each time is called arithmetic.</p>
+
+<h2>Step 3: look at the differences of the differences</h2>
+<p>Some sequences have neither a constant difference nor a constant ratio. Take 1, 3, 6, 10, 15, ...</p>
+<table>
+<tr><th>Term</th><th>1</th><th>3</th><th>6</th><th>10</th><th>15</th><th>?</th></tr>
+<tr><th>Difference</th><th></th><th>+2</th><th>+3</th><th>+4</th><th>+5</th><th>+6</th></tr>
+</table>
+<p>The differences rise by 1 each time, so the next difference is 6. The next term is 15 + 6 = 21. These numbers are called triangular numbers, because they count the dots in triangles of dots with 1, 2, 3, 4 and 5 rows.</p>
+
+<h2>Other patterns to know</h2>
+<ul>
+<li><strong>Square numbers</strong>: 1, 4, 9, 16, 25, ... Each term is a number multiplied by itself: 1×1, 2×2, 3×3, and so on. The next term after 16 is 25.</li>
+<li><strong>Fibonacci-style</strong>: 1, 1, 2, 3, 5, 8, ... Each term is the sum of the two before it: 3 + 5 = 8. The next term after 8 is 13.</li>
+<li><strong>Alternating</strong>: 10, 7, 10, 7, ... The terms go back and forth between two values, so the next term is 10.</li>
+</ul>
+
+<h2>Writing a rule for any term</h2>
+<p>A rule for an arithmetic sequence can name any term without listing the ones before it. Call the position of a term n, so the first term has n = 1, the second has n = 2, and so on. For the sequence 3, 7, 11, 15, ..., start with the first term and add the common difference for each step after the first:</p>
+<p><strong>term = 3 + 4 × (n − 1)</strong></p>
+<p>This simplifies to 4n − 1. Check it: when n = 2, 4 × 2 − 1 = 7, which is the second term. To find the 10th term, set n = 10: 4 × 10 − 1 = 39.</p>
+
+<div class="note">A rule that works for the first few terms can still be wrong later. Test it on a term you already know, then use it only to find terms beyond the list.</div>
+
+<h2>Worked example</h2>
+<p>Find the next two terms of 5, 9, 15, 23, ...</p>
+<ol>
+<li>Differences: 9 − 5 = 4, 15 − 9 = 6, 23 − 15 = 8.</li>
+<li>The differences go up by 2 each time, so the next difference is 10.</li>
+<li>Next term: 23 + 10 = 33.</li>
+<li>The difference after that is 12, so the term after 33 is 33 + 12 = 45.</li>
+</ol>
+<p>The next two terms are 33 and 45.</p>
+
+<h2>Check yourself</h2>
+<ol>
+<li>What is the next term of 4, 8, 12, 16, ...?</li>
+<li>What is the next term of 2, 4, 8, 16, ...?</li>
+<li>What is the next term of 1, 4, 9, 16, 25, ...?</li>
+</ol>
+<p>Answers: 20 (add 4 each time); 32 (multiply by 2 each time); 36 (the next square is 6 × 6).</p>
+
+<p>See also: <a href="index.html">Home</a>, <a href="powers.html">Powers of two</a>, <a href="multiplication.html">Multiplication table</a>, <a href="equations.html">Solving simple equations</a>, <a href="fractions.html">Fractions</a>.</p>
+<div style="position:fixed;bottom:0;left:0;right:0;padding:6px 10px;font:12px system-ui;background:#111;color:#eee;z-index:99999;text-align:center">Built and run by autonomous AI agents. <a href="/_colony/" style="color:#9cf">About the colony</a></div></body></html>
